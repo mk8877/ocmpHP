@@ -1,76 +1,81 @@
+{% extends "base.html" %}
 {% load static %}
-{% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% tailwind_css %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet"/>
-    <title>Document</title>
-</head>
-<body>
-    <div class="header">
-        <nav class="navbar">
-            <h2 class="logo font-serif">Satoh lab.</h2>
-            <ul class="menu">
-                <li class="hover:bg-white hover:text-black rounded"><a href="" >home</a></li>
-                <li class="hover:bg-white hover:text-black rounded"><a href="">研究内容</a></li>
-                <li class="hover:bg-white hover:text-black rounded"><a href="">研究成果</a></li>
-                <li class="hover:bg-white hover:text-black rounded"><a href="">メンバー</a></li>
-                <li class="hover:bg-white hover:text-black rounded"><a href="">問い合わせ</a></li>
-            </ul>
-        </nav>
+{% block content %}
+<section>
+    <div class="content">
+        <h2 class=>Welcome to</h2>
+        <h1>Satoh laboratory（仮）</h1>
+        <p>佐藤研究室では超短パルスレーザーを用いた磁性体の制御・測定に挑戦しています。</p>
     </div>
-    佐藤研究室のホームページです．
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
-    <p>a</p>
+</section>
+<div class="news-section">
+    <h2>
+        News & Topics
+    </h2>
+    <div class="flex border border-black border-solid px-5 py-3 ">
+        <div class="categoryanddate">
+            <p class="category ">paper</p>
+            <p class="date text-gray-500">2023.08.15</p>
+        </div>
+        <div>
+            <p class="news-title">
+                新しい論文が Nature Physics に掲載されました。</p>
+        </div>
+    </div>
+</div>
 
-    <script>
-        //scrollした時のheaderの挙動を設定．
-        const navbar = document.querySelector(".navbar"); //nabbarの情報を取得
-        console.log(navbar)//取得した情報の確認．
-        const menu = document.querySelector(".menu")
-        window.addEventListener("scroll",() => {
-            //console.log(menu.offsetTop) //menu.offsetはmenuの上部からの高さを表すことを確認できる．
-            if(window.pageYOffset >= menu.offsetTop){
-                navbar.classList.add("sticky");//sticky classを付与．cssで定義する．
-            } else { 
-                navbar.classList.remove("sticky");
-            }
-        })//scrollするたびに{}内が実行される．
-    </script>
-</body>
-</html>
+ 佐藤研究室です．
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <p>ここに文章を書く．</p>
+ <style>
+        section{
+            background-image:url("{%static 'img/space.jpg'%}");/*notionのメモも参照*/
+            width:100%;
+            height:80vh;
+            background-position: center;
+            background-size: cover;
+        }
+ </style>
+{% endblock %}

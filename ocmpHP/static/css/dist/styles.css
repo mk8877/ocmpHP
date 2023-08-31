@@ -747,8 +747,16 @@ select {
   margin-right: auto;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-screen {
@@ -767,9 +775,32 @@ select {
   border-radius: 0.25rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .font-serif {
@@ -789,18 +820,21 @@ select {
   letter-spacing: 0em;
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family:sans-serif;
 }
 
 /**/
 
-/*headerの設定*/
-
-/**/
+/*headerの設定
+-----------------------------------------------------------------------------*/
 
 nav {
   width: 100%;
@@ -818,9 +852,9 @@ nav.sticky {
   background-color: #000;
   color: white;
   justify-content: space-between;
-  /* 横軸をそろえる */
+  /* 両端に等間隔で設置 */
   align-items: center;
-  /* 縦軸をそろえる */
+  /* hrizonal軸をそろえる */
   padding: 5px 3%;
   transition: 0.2s;
 }
@@ -860,9 +894,9 @@ nav ul li a {
 
 .header {
   width: 100%;
-  height: 14.5vh;
+  height: 8vh;
   /* 画面に対する% */
-  background-color: white;
+  background-color: black;
 }
 
 .logo {
@@ -870,6 +904,7 @@ nav ul li a {
   /* 上，右，下，左 */
   font-weight: 450;
   /* 太さ */
+  color: white;
 }
 
 /* 460px以下(スマホ)では，menubarのロゴ部をなくしてコンパクトにした．具体的には，pcでのscroll前のcssを活用した．*/
@@ -902,6 +937,72 @@ nav ul li a {
 /*
 headerの設定ここまで
 */
+
+/*
+//
+//
+//
+//
+index.htmlの設定
+-------------------------------------------------------*/
+
+.content{
+  color: white;
+  padding: 10%;
+  /*max-width: 700px;/*これを上回ったとき折り返す*/
+}
+
+.content h1{
+  font-size: 80px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.news-section{
+  padding: 20px 10%;
+}
+
+.news-section h2{
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.news-section .flex {
+  display: flex;
+  align-items: center;
+  /* これで子要素を垂直方向に中央揃えします */
+}
+
+.categoryanddate {
+  display: flex;
+  /* 横並びにする flexというcssの配置方法がある */
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.category {
+  flex:3;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.date {
+  flex:1;
+}
+
+.news-title {
+  height: 100%;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  border-left: 2px solid #000;
+  padding-left: 10px;
+}
 
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;

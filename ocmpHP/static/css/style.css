@@ -6,12 +6,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family:sans-serif;
 }
 /**/
-/*headerの設定*/
-/**/
+/*headerの設定
+-----------------------------------------------------------------------------*/
 nav {
     width: 100%; /* 親タグに対する割合 */
     padding: 20px 0;
@@ -25,11 +24,10 @@ nav.sticky {
     display: flex;
     background-color: #000;
     color: white;
-    justify-content: space-between;/* 横軸をそろえる */
-    align-items: center;/* 縦軸をそろえる */
+    justify-content: space-between;/* 両端に等間隔で設置 */
+    align-items: center;/* hrizonal軸をそろえる */
     padding: 5px 3%;
     transition: 0.2s;
-
 }
 
 nav.sticky .logo{
@@ -62,14 +60,14 @@ nav ul li a {
 
 .header {
     width: 100%;
-    height: 14.5vh; /* 画面に対する% */
-    background-color: white;
+    height: 8vh; /* 画面に対する% */
+    background-color: black;
 }
 
 .logo {
     margin: 0 auto 20px auto; /* 上，右，下，左 */
     font-weight: 450; /* 太さ */
-
+    color: white;
 }
 
 
@@ -95,3 +93,64 @@ nav ul li a {
 /*
 headerの設定ここまで
 */
+/*
+//
+//
+//
+//
+index.htmlの設定
+-------------------------------------------------------*/
+.content{
+    color: white;
+    padding: 10%;
+    /*max-width: 700px;/*これを上回ったとき折り返す*/
+}
+.content h1{
+    font-size: 80px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.news-section{
+    padding: 20px 10%;
+}
+
+.news-section h2{
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.news-section .flex {
+    display: flex;
+    align-items: center; /* これで子要素を垂直方向に中央揃えします */
+}
+.categoryanddate {
+    display: flex; /* 横並びにする flexというcssの配置方法がある */
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.category {
+    flex:3;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.date {
+    flex:1;
+}
+
+
+.news-title {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    border-left: 2px solid #000;
+    padding-left: 10px;
+}
