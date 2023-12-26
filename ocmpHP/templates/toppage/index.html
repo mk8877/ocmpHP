@@ -1,28 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section>
-    <div class="content">
-        <h2 class=>Welcome to</h2>
-        <h1>Satoh laboratory（仮）</h1>
+<section class="toppage">
+    <div class="toppage-text">
+        <span>Welcome to</span>
+        <h1>Satoh laboratory</h1>
         <p>佐藤研究室では超短パルスレーザーを用いた磁性体の制御・測定に挑戦しています。</p>
     </div>
+
+    <!--<div class="toppage-img">
+        <img src="{%static 'img/Hysteresis.png'%}">
+    </div>-->
 </section>
-<div class="news-section">
-    <h2>
-        News & Topics
-    </h2>
-    <div class="flex border border-black border-solid px-5 py-3 ">
-        <div class="categoryanddate">
-            <p class="category ">paper</p>
-            <p class="date text-gray-500">2023.08.15</p>
-        </div>
-        <div>
-            <p class="news-title">
-                新しい論文が Nature Physics に掲載されました。</p>
-        </div>
-    </div>
-</div>
+
 
  佐藤研究室です．
  <p>ここに文章を書く．</p>
@@ -70,10 +60,10 @@
  <p>ここに文章を書く．</p>
  <p>ここに文章を書く．</p>
  <style>
-        section{
+        .toppage{
             background-image:url("{%static 'img/space.jpg'%}");/*notionのメモも参照*/
             width:100%;
-            height:80vh;
+            height:100vh;
             background-position: center;
             background-size: cover;
         }

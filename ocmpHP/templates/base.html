@@ -5,7 +5,14 @@
     {% tailwind_css %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--cssの読み込み-->
     <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet"/>
+    <!--box iconsの読み込み-->
+    <link rel="stylesheet" href="boxicons.min.css">
+    <!--google fontの読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <title>Satoh laboratory</title>
 </head>
 <body>
@@ -16,7 +23,7 @@
                 <li class="hover:bg-white hover:text-black rounded"><a href="" >home</a></li>
                 <li class="hover:bg-white hover:text-black rounded"><a href="">研究内容</a></li>
                 <li class="hover:bg-white hover:text-black rounded"><a href="">研究成果</a></li>
-                <li class="hover:bg-white hover:text-black rounded"><a href="">メンバー</a></li>
+                <li class="hover:bg-white hover:text-black rounded"><a href="{% url 'members:member_page' %}">メンバー</a></li>
                 <li class="hover:bg-white hover:text-black rounded"><a href="">問い合わせ</a></li>
             </ul>
         </nav>

@@ -7,6 +7,10 @@
     margin: 0;
     padding: 0;
     font-family:sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color:#fff;
 }
 /**/
 /*headerの設定
@@ -55,18 +59,20 @@ nav ul li {
 
 nav ul li a {
     padding: 10px 20px;
-    transition: 0.8s;
+    transition: 1s;
 }
 
 .header {
     width: 100%;
-    height: 8vh; /* 画面に対する% */
+    height: 0vh; /* 画面に対する% */
+    position: relative;/*z-indexと併用で最前面に表示*/
     background-color: black;
+    z-index: 1000;
 }
 
 .logo {
-    margin: 0 auto 20px auto; /* 上，右，下，左 */
-    font-weight: 450; /* 太さ */
+    margin: 0 auto 10px auto; /* 上，右，下，左 */
+    font-weight: 500; /* 太さ */
     color: white;
 }
 
@@ -100,6 +106,31 @@ headerの設定ここまで
 //
 index.htmlの設定
 -------------------------------------------------------*/
+
+.toppage{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center; /*主軸方向に整列．この時の要素はdiv単位*/
+    justify-content: space-between; /* 両端に接するように設置 */
+    gap: 20px; /* 要素間の間隔 space-betweenで両端によっているので，各divのsizeが変わる．*/
+
+
+}
+.toppage-img{
+    width: 730px;
+}
+.toppage-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.toppage-text span{
+    padding: 5px 10px;
+    background-color: aqua;
+}
+
 .content{
     color: white;
     padding: 10%;
@@ -109,6 +140,7 @@ index.htmlの設定
     font-size: 80px;
     font-weight: 600;
     margin-bottom: 40px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .news-section{
@@ -153,4 +185,30 @@ index.htmlの設定
     text-align: center;
     border-left: 2px solid #000;
     padding-left: 10px;
+}
+
+
+/*
+index.htmlの設定ここまで
+*/
+/*
+//
+//
+//
+//
+member.htmlの設定
+-------------------------------------------------------*/
+.members{
+    display: flex;
+    min-height: 100vh; /* 最小の高さをビューポートの高さに設定 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.members-img {
+    width: 100%;
+    height: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
