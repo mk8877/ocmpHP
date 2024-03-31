@@ -6,12 +6,15 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:sans-serif;
     box-sizing: border-box;
-    font-family: 'Noto Sans JP', sans-serif;
+}
+body{
+    background-color:#fff;
 }
 /**/
-/*headerの設定*/
-/**/
+/*headerの設定
+-----------------------------------------------------------------------------*/
 nav {
     width: 100%; /* 親タグに対する割合 */
     padding: 20px 0;
@@ -25,11 +28,10 @@ nav.sticky {
     display: flex;
     background-color: #000;
     color: white;
-    justify-content: space-between;/* 横軸をそろえる */
-    align-items: center;/* 縦軸をそろえる */
+    justify-content: space-between;/* 両端に等間隔で設置 */
+    align-items: center;/* hrizonal軸をそろえる */
     padding: 5px 3%;
     transition: 0.2s;
-
 }
 
 nav.sticky .logo{
@@ -57,19 +59,21 @@ nav ul li {
 
 nav ul li a {
     padding: 10px 20px;
-    transition: 0.8s;
+    transition: 1s;
 }
 
 .header {
     width: 100%;
-    height: 14.5vh; /* 画面に対する% */
-    background-color: white;
+    height: 0vh; /* 画面に対する% */
+    position: relative;/*z-indexと併用で最前面に表示*/
+    background-color: black;
+    z-index: 1000;
 }
 
 .logo {
-    margin: 0 auto 20px auto; /* 上，右，下，左 */
-    font-weight: 450; /* 太さ */
-
+    margin: 0 auto 10px auto; /* 上，右，下，左 */
+    font-weight: 500; /* 太さ */
+    color: white;
 }
 
 
@@ -95,3 +99,182 @@ nav ul li a {
 /*
 headerの設定ここまで
 */
+/*
+//
+//
+//
+//
+index.htmlの設定
+-------------------------------------------------------*/
+
+.toppage{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center; /*主軸方向に整列．この時の要素はdiv単位*/
+    justify-content: space-between; /* 両端に接するように設置 */
+    gap: 20px; /* 要素間の間隔 space-betweenで両端によっているので，各divのsizeが変わる．*/
+
+
+}
+.toppage-img{
+    width: 730px;
+}
+.toppage-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.toppage-text span{
+    padding: 5px 10px;
+    background-color: aqua;
+}
+
+.content{
+    color: white;
+    padding: 10%;
+    /*max-width: 700px;/*これを上回ったとき折り返す*/
+}
+.content h1{
+    font-size: 80px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.news-section{
+    padding: 20px 10%;
+}
+
+.news-section h2{
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.news-section .flex {
+    display: flex;
+    align-items: center; /* これで子要素を垂直方向に中央揃えします */
+}
+.categoryanddate {
+    display: flex; /* 横並びにする flexというcssの配置方法がある */
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.category {
+    flex:3;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.date {
+    flex:1;
+}
+
+
+.news-title {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    border-left: 2px solid #000;
+    padding-left: 10px;
+}
+
+
+/*
+index.htmlの設定ここまで
+*/
+/*
+//
+//
+//
+//
+member.htmlの設定
+-------------------------------------------------------*/
+.members {
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.spacer {
+    height: 60vh;
+}
+
+.body { /*これは各pageで共通にするつもり*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+}
+
+.page_title{ 
+    text-align: center;
+    margin-bottom: 30px;
+}
+.page_title h1{
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.page_title p{
+    font-size: 1rem;
+    color: #666;
+}
+
+.members_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+#MyBtn {
+    cursor: pointer;
+}
+/* モーダルの基本スタイル */
+.modal {
+    display: none; /* デフォルトでは非表示 */
+    position: fixed; /* 画面上に固定表示 */
+    z-index: 100; /* コンテンツの上に表示 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 幅を画面全体に */
+    height: 100%; /* 高さを画面全体に */
+    background-color: rgb(0,0,0); /* 背景色 */
+    background-color: rgba(0,0,0,0.4); /* 黒色の背景に少し透明度を持たせる */
+    justify-content: center;
+    align-items: center;
+}
+
+/* モーダルのコンテンツスタイル */
+.modal-content {
+    background-color: None;
+    margin: 15% auto; /* 上下のマージンと中央揃え */
+    padding: 20px;
+    width: 30%; /* 幅を40%に設定 */
+}
+
+/* 閉じるボタンのスタイル */
+.close {
+    color: #767474;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

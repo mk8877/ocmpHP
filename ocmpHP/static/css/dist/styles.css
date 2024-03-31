@@ -747,12 +747,80 @@ select {
   margin-right: auto;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.h-48 {
+  height: 12rem;
+}
+
 .h-screen {
   height: 100vh;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -763,13 +831,73 @@ select {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-serif {
@@ -781,26 +909,82 @@ select {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
 .leading-normal {
   line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
 }
 
 .tracking-normal {
   letter-spacing: 0em;
 }
 
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family:sans-serif;
   box-sizing: border-box;
-  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+  background-color:#fff;
 }
 
 /**/
 
-/*headerの設定*/
-
-/**/
+/*headerの設定
+-----------------------------------------------------------------------------*/
 
 nav {
   width: 100%;
@@ -818,9 +1002,9 @@ nav.sticky {
   background-color: #000;
   color: white;
   justify-content: space-between;
-  /* 横軸をそろえる */
+  /* 両端に等間隔で設置 */
   align-items: center;
-  /* 縦軸をそろえる */
+  /* hrizonal軸をそろえる */
   padding: 5px 3%;
   transition: 0.2s;
 }
@@ -855,21 +1039,25 @@ nav ul li {
 
 nav ul li a {
   padding: 10px 20px;
-  transition: 0.8s;
+  transition: 1s;
 }
 
 .header {
   width: 100%;
-  height: 14.5vh;
+  height: 0vh;
   /* 画面に対する% */
-  background-color: white;
+  position: relative;
+  /*z-indexと併用で最前面に表示*/
+  background-color: black;
+  z-index: 1000;
 }
 
 .logo {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 10px auto;
   /* 上，右，下，左 */
-  font-weight: 450;
+  font-weight: 500;
   /* 太さ */
+  color: white;
 }
 
 /* 460px以下(スマホ)では，menubarのロゴ部をなくしてコンパクトにした．具体的には，pcでのscroll前のcssを活用した．*/
@@ -902,6 +1090,211 @@ nav ul li a {
 /*
 headerの設定ここまで
 */
+
+/*
+//
+//
+//
+//
+index.htmlの設定
+-------------------------------------------------------*/
+
+.toppage{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  /*主軸方向に整列．この時の要素はdiv単位*/
+  justify-content: space-between;
+  /* 両端に接するように設置 */
+  gap: 20px;
+  /* 要素間の間隔 space-betweenで両端によっているので，各divのsizeが変わる．*/
+}
+
+.toppage-img{
+  width: 730px;
+}
+
+.toppage-img img{
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.toppage-text span{
+  padding: 5px 10px;
+  background-color: aqua;
+}
+
+.content{
+  color: white;
+  padding: 10%;
+  /*max-width: 700px;/*これを上回ったとき折り返す*/
+}
+
+.content h1{
+  font-size: 80px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.news-section{
+  padding: 20px 10%;
+}
+
+.news-section h2{
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.news-section .flex {
+  display: flex;
+  align-items: center;
+  /* これで子要素を垂直方向に中央揃えします */
+}
+
+.categoryanddate {
+  display: flex;
+  /* 横並びにする flexというcssの配置方法がある */
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.category {
+  flex:3;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.date {
+  flex:1;
+}
+
+.news-title {
+  height: 100%;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  border-left: 2px solid #000;
+  padding-left: 10px;
+}
+
+/*
+index.htmlの設定ここまで
+*/
+
+/*
+//
+//
+//
+//
+member.htmlの設定
+-------------------------------------------------------*/
+
+.members {
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.spacer {
+  height: 60vh;
+}
+
+.body {
+  /*これは各pageで共通にするつもり*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
+.page_title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page_title h1{
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.page_title p{
+  font-size: 1rem;
+  color: #666;
+}
+
+.members_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#MyBtn {
+  cursor: pointer;
+}
+
+/* モーダルの基本スタイル */
+
+.modal {
+  display: none;
+  /* デフォルトでは非表示 */
+  position: fixed;
+  /* 画面上に固定表示 */
+  z-index: 100;
+  /* コンテンツの上に表示 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* 幅を画面全体に */
+  height: 100%;
+  /* 高さを画面全体に */
+  background-color: rgb(0,0,0);
+  /* 背景色 */
+  background-color: rgba(0,0,0,0.4);
+  /* 黒色の背景に少し透明度を持たせる */
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダルのコンテンツスタイル */
+
+.modal-content {
+  background-color: None;
+  margin: 15% auto;
+  /* 上下のマージンと中央揃え */
+  padding: 20px;
+  width: 30%;
+  /* 幅を40%に設定 */
+}
+
+/* 閉じるボタンのスタイル */
+
+.close {
+  color: #767474;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;

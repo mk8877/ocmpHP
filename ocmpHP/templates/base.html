@@ -1,0 +1,50 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--cssの読み込み-->
+    <link href="{% static 'css/dist/styles.css' %}" rel="stylesheet"/>
+    <!--box iconsの読み込み-->
+    <link rel="stylesheet" href="boxicons.min.css">
+    <!--google fontの読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title>Satoh laboratory</title>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <h2 class="logo font-serif">Satoh laboratory</h2>
+            <ul class="menu hidden">
+                <li class="hover:bg-white hover:text-black rounded"><a href="" >home</a></li>
+                <li class="hover:bg-white hover:text-black rounded"><a href="">研究内容</a></li>
+                <li class="hover:bg-white hover:text-black rounded"><a href="">研究成果</a></li>
+                <li class="hover:bg-white hover:text-black rounded"><a href="{% url 'members:member_page' %}">メンバー</a></li>
+                <li class="hover:bg-white hover:text-black rounded"><a href="">問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <script>
+        //scrollした時のheaderの挙動を設定．
+        const navbar = document.querySelector(".navbar"); //nabbarの情報を取得
+        console.log(navbar)//取得した情報の確認．
+        const menu = document.querySelector(".menu")
+        window.addEventListener("scroll",() => {
+            //console.log(menu.offsetTop) //menu.offsetはmenuの上部からの高さを表すことを確認できる．
+            if(window.pageYOffset >= 100){//window.pageYOffsetを100px以上スクロールしたら
+                navbar.classList.add("sticky");//sticky classを付与．cssで定義する．
+                menu.classList.remove("hidden");//リロード直後はhidden classが付与されているからmenuは表示されないが，一度スクロールして以降は表示されるようにする．
+            } else { 
+                navbar.classList.remove("sticky");
+                menu.classList.add("hidden"); 
+            }
+        })//scrollするたびに{}内が実行される．
+    </script>
+</body>
+</html>
