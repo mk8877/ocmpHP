@@ -15,75 +15,101 @@
             <h2>Research staff / Professor emeritus</h2>
             <h2>Research staff</h2>
             <h2>Ph.D students</h2>
+            <div class="flex items-center justify-center w-full px-5 py-6 mx-auto max-w-xl">
+                <div class="grid grid-cols-1 gap-4">
+                    {% for member in members_PhD %}
+                        <div id="MyBtn{{member.id}}" class="bg-white shadow-xl rounded-xl overflow-hidden">
+                            <img alt="team" class="w-32 h-32 mx-auto mt-4 rounded-full" src="https://storage.googleapis.com/indie-hackers.appspot.com/avatars/300x300_DUFTlhOdmSdoT9F4r1Woo40pyML2.webp">
+                            <div class="p-6 text-center">
+                                <h4 class="text-xl font-semibold leading-none tracking-tighter text-black">{{member.name}}</h4>
+                                <p class="mt-2 text-base leading-relaxed text-gray-500">{{member.name_roman}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
             <h2>Master course students</h2>
             <!--プロフィール-->
-            <div class="flex items-center justify-center w-full px-5 py-9 mx-auto max-w-md">
-                <div id="MyBtn" class="grid grid-cols-1 gap-4">
-                    <div class="bg-white shadow-xl rounded-xl overflow-hidden">
-                        <img alt="team" class="w-32 h-32 mx-auto mt-4 rounded-full" src="https://storage.googleapis.com/indie-hackers.appspot.com/avatars/300x300_DUFTlhOdmSdoT9F4r1Woo40pyML2.webp">
-                        <div class="p-6 text-center">
-                            <h4 class="text-xl font-semibold leading-none tracking-tighter text-black">三国 宏樹</h4>
-                            <p class="mt-2 text-base leading-relaxed text-gray-500">Mikuni Kouki</p>
+            <div class="flex items-center justify-center w-full px-5 py-6 mx-auto max-w-xl">
+                <div class="grid grid-cols-3 gap-4">
+                    {% for member in members_master2 %}
+                        <div id="MyBtn{{member.id}}" class="bg-white shadow-xl rounded-xl overflow-hidden">
+                            <img alt="team" class="w-32 h-32 mx-auto mt-4 rounded-full" src="https://storage.googleapis.com/indie-hackers.appspot.com/avatars/300x300_DUFTlhOdmSdoT9F4r1Woo40pyML2.webp">
+                            <div class="p-6 text-center">
+                                <h4 class="text-xl font-semibold leading-none tracking-tighter text-black">{{member.name}}</h4>
+                                <p class="mt-2 text-base leading-relaxed text-gray-500">{{member.name_roman}}</p>
+                            </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <!--以下ポップアップ(モーダル)-->
-            <div id="memberModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="grid max-w-lg gap-5 mx-auto">
-                        <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-                        <div class="flex-shrink-0">
-                            <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1561654791-00316c79efa8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" alt="">
-                        </div>
-                        <div class="flex flex-col justify-between flex-1 p-5 bg-white">
-                            <div class="flex-1">
-                            <a class="block">
-                                <div class="items-end text-center">
-                                    <p class="text-xl font-semibold text-black">三国 宏樹<br></p>
-                                    <p class="text-sm text-gray-500">&nbsp;Mikuni Kouki</p>
-                                </div>
-                                <p class="mt-3 text-black">Brief Comment</p>
-                                <p class="mt-2 text-gray-500">隣の研究は青い
-                            </a>
+            {% for member in members_all %}
+                <div id="memberModal{{member.id}}" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="grid max-w-lg gap-5 mx-auto">
+                            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                            <div class="flex-shrink-0">
+                                <img class="object-cover w-full h-48" src="https://images.unsplash.com/photo-1561654791-00316c79efa8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60" alt="">
                             </div>
-                        </div>
+                            <div class="flex flex-col justify-between flex-1 p-5 bg-white">
+                                <div class="flex-1">
+                                <a class="block">
+                                    <div class="items-end text-center">
+                                        <p class="text-xl font-semibold text-black">{{member.name}}<br></p>
+                                        <p class="text-sm text-gray-500">&nbsp;{{member.name_roman}}</p>
+                                    </div>
+                                    <p class="mt-3 text-black">Research</p>
+                                    <p class="mt-2 text-gray-500">{{member.research}}
+                                    <p class="mt-3 text-black">Brief Comment</p>
+                                    <p class="mt-2 text-gray-500">{{member.comment}}</p>
+                                </a>
+                                </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
             <h2>Bachelor students</h2>
         </div>
     </div>
 </div>
 <script>
-    // モーダルを取得
-    var modal = document.getElementById("memberModal");
+document.addEventListener("DOMContentLoaded", function() {
+    // すべての閉じるボタンに対するイベントリスナーを設定
+    document.querySelectorAll('.close').forEach(function(span) {
+        span.onclick = function() {
+            // この閉じるボタンが属するモーダルを非表示にする
+            this.closest('.modal').style.display = 'none';
+        };
+    });
 
-    // モーダルを開くための要素を取得（例: プロフィール画像）
-    var btn = document.getElementById("MyBtn");
+    // モーダルの外側をクリックした場合にモーダルを閉じる
+    document.querySelectorAll('.modal').forEach(function(modal) {
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    });
 
-    // モーダルを閉じる<span>要素を取得
-    var span = document.getElementsByClassName("close")[0];
-    
-
-    // ユーザーがボタンをクリックしたらモーダルを開く
-    btn.onclick = function() {
-        modal.style.display = "flex";
-    }
-
-
-    // <span> (x) をクリックしたらモーダルを閉じる
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // ユーザーがモーダルの外側をクリックしたらモーダルを閉じる
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    // 各ボタンに対してイベントリスナーを設定
+    document.querySelectorAll("[id^='MyBtn']").forEach(function(btn) {
+        btn.onclick = function() {
+            // ボタンのIDから対応するモーダルのIDを導出
+            var modalId = 'memberModal' + btn.id.replace('MyBtn', '');
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        };
+    });
+});
 </script>
-{% endblock %}
+<style>
+    [id^='MyBtn'] {
+        cursor: pointer;
+    }
+</style>{% endblock %}
