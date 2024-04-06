@@ -4,6 +4,7 @@ from django.db import models
 class Member(models.Model):
     name = models.CharField(max_length=100)
     name_roman = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/', null=True)
     research = models.CharField(max_length=100)
     comment = models.TextField()
     hometown = models.CharField(max_length=100)
