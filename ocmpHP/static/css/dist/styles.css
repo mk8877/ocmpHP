@@ -734,6 +734,10 @@ select {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -787,11 +791,6 @@ select {
   height: 100vh;
 }
 
-.h-max {
-  height: -moz-max-content;
-  height: max-content;
-}
-
 .w-32 {
   width: 8rem;
 }
@@ -830,10 +829,6 @@ select {
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-items-center {
-  justify-items: center;
 }
 
 .gap-4 {
@@ -892,8 +887,9 @@ select {
   padding: 1.5rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-5 {
@@ -904,16 +900,6 @@ select {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .text-center {
@@ -1219,7 +1205,10 @@ index.htmlの設定ここまで
 member.htmlの設定
 -------------------------------------------------------*/
 
-.members {
+.member {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease-in-out;
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
@@ -1232,6 +1221,18 @@ member.htmlの設定
 
 .body {
   /*これは各pageで共通にするつもり*/
+  opacity: 0;
+  /* 不透明度 */
+  visibility: hidden;
+  transition: all 1s;
+  transform: translateY(150px);
+  /* 150px下にずらす */
+}
+
+.body_active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
   display: flex;
   flex-direction: column;
   align-items: center;

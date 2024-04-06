@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="members" style="background-image: url({% static 'img/members_all.png' %});">
+<div id="member" class="member" style="background-image: url({% static 'img/members_all.png' %});">
     <div class="spacer"></div>
-    <div class="body">
+    <div id="body" class="body">
         <div class="page_title">
             <h1>Member</h1>
             <p>2024</p>
@@ -76,6 +76,22 @@
     </div>
 </div>
 <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var memberElement = document.getElementById('member');
+        memberElement.style.opacity = "1";
+        memberElement.style.visibility = "visible";
+    }, 100); // 1秒後に実行
+});
+
+    //フェードインの設定
+window.onload=function(){
+    setTimeout(function(){
+        var bodyelement = document.getElementById('body');
+        bodyelement.classList.add('body_active');
+    },1000);
+}
     //member.idにより識別されるモーダルを表示
 document.addEventListener("DOMContentLoaded", function() {
     // すべての閉じるボタンに対するイベントリスナーを設定
