@@ -1202,10 +1202,15 @@ index.htmlの設定ここまで
 //
 //
 //
-member.htmlの設定
+/*
+//
+//
+//
+//
+page共通の設定
 -------------------------------------------------------*/
 
-.member {
+.bg_class {
   opacity: 0;
   visibility: hidden;
   transition: all 1s ease-in-out;
@@ -1224,7 +1229,7 @@ member.htmlの設定
   opacity: 0;
   /* 不透明度 */
   visibility: hidden;
-  transition: all 1s;
+  transition: all 0.5s;
   transform: translateY(150px);
   /* 150px下にずらす */
 }
@@ -1256,6 +1261,15 @@ member.htmlの設定
   font-size: 1rem;
   color: #666;
 }
+
+/*
+//-------------------------------------------------------
+page共通の設定ここまで
+//
+//
+//
+member.htmlの設定
+-------------------------------------------------------*/
 
 .members_list {
   display: flex;
@@ -1315,6 +1329,45 @@ member.htmlの設定
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/*
+//-------------------------------------------------------
+member.htmlの設定ここまで
+//
+//
+//
+contact.htmlの設定
+-------------------------------------------------------*/
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 700px;
+  line-height: 1.6;
+  /* 行間 */
+}
+
+.contact_block {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_block h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.contact_block p {
+  font-size: 18px;
 }
 
 .hover\:bg-white:hover {

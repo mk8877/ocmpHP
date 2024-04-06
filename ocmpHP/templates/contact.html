@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div id="contact" class="bg_class" style="background-image: url({% static 'img/honkan.jpg' %});">
+    <div class="spacer"></div>
+    <div id="body" class="body">
+        <div class="page_title">
+            <h1>Contact</h1>
+        </div>
+        <div class="contact_info">
+            佐藤研究室では、新しい研究分野を切り開く意志をもった卒研生、大学院生を募集しています。 理学院物理学系の大学院入学試験の案内はこちらです。 博士研究員を希望の方は、ご相談ください。 研究室見学を随時、歓迎しております。
+            <br><br>
+            <div class="contact_block">
+                <h2>連絡先</h2>
+                <p>佐藤 琢哉（教授）</p>
+            </div>
+            <div class="contact_block">
+                <h2>所属</h2>
+                <p>東京工業大学 理学院 物理学系 佐藤研究室</p>
+            </div>
+            <div class="contact_block">
+                <h2>住所</h2>
+                <p>〒152-8551 東京都目黒区大岡山2-12-1</p>
+                <p>南5号館5階 502D(教授室) 507CD(学生居室)</p>
+            </div>
+            <div class="contact_block">
+                <h2>電話番号(教授室)	</h2>
+                <p>03-5734-2716</p>
+            </div>
+            <div class="contact_block">
+                <h2>電話番号(学生居室)	</h2>
+                <p>03-5734-2454</p>
+            </div>
+            <div class="contact_block">
+                <h2>メール</h2>
+                <img src="{% static 'img/satoh_mail.png' %}">
+            </div>
+            <br><br
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var contactElement = document.getElementById('contact');
+        contactElement.style.opacity = "1";
+        contactElement.style.visibility = "visible";
+}, 100); // 0.1秒後に実行
+});
+
+//フェードインの設定
+window.onload=function(){
+    setTimeout(function(){
+        var bodyelement = document.getElementById('body');
+        bodyelement.classList.add('body_active');
+    },1500);
+}
+</script>
+{% endblock %}

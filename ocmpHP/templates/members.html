@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div id="member" class="member" style="background-image: url({% static 'img/members_all.png' %});">
+<div id="member" class="bg_class" style="background-image: url({% static 'img/members_all.png' %});">
     <div class="spacer"></div>
     <div id="body" class="body">
         <div class="page_title">
@@ -76,13 +76,13 @@
     </div>
 </div>
 <script>
-
+//背景画像のフェードイン
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         var memberElement = document.getElementById('member');
         memberElement.style.opacity = "1";
         memberElement.style.visibility = "visible";
-    }, 100); // 1秒後に実行
+    }, 100); // 0.1秒後に実行
 });
 
     //フェードインの設定
@@ -90,7 +90,7 @@ window.onload=function(){
     setTimeout(function(){
         var bodyelement = document.getElementById('body');
         bodyelement.classList.add('body_active');
-    },1000);
+    },1500);
 }
     //member.idにより識別されるモーダルを表示
 document.addEventListener("DOMContentLoaded", function() {
@@ -128,4 +128,5 @@ document.addEventListener("DOMContentLoaded", function() {
     [id^='MyBtn'] {
         cursor: pointer;
     }
-</style>{% endblock %}
+</style>
+{% endblock %}
