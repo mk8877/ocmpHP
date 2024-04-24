@@ -1281,6 +1281,96 @@ member.htmlの設定
   margin-top: 10px;
 }
 
+.member_templete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member_name {
+  display: flex;
+  flex-direction: column;
+}
+
+.member_name img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.member_name h1 {
+  font-size: 20px;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+.member_name p {
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+/* 教授陣のスタイル */
+
+.prof_templete {
+  display: flex;
+  /* Flexbox を使って要素を横に並べる */
+  padding: 20px;
+  /* 余白を追加 */
+  max-width: 900px;
+  /* 最大幅を指定 */
+  margin: 0 auto;
+  /* 中央寄せ */
+}
+
+.prof_body {
+  display: flex;
+  width: 100%;
+  /* コンテナ全体の幅を使用 */
+  flex-wrap: nowrap;
+}
+
+.prof_left, .prof_right {
+  flex: 1;
+  padding: 30px;
+  /* 内部の余白を設定 */
+  margin: 0 5px;
+  /* 周囲の余白を設定 */
+  line-height: 180%;
+  /* 行間を適切に設定 */
+}
+
+.prof_left h2 {
+  font-size: 25px;
+  /* タイトルのフォントサイズを設定 */
+  font-weight: 700;
+  /* フォントの太さを設定 */
+  margin-bottom: -10px;
+}
+
+.prof_left p, .prof_right p{
+  font-size: 15px;
+  line-height: 170%;
+  /* 行間を適切に設定 */
+  margin-top: 10px;
+  /* 段落間の余白を設定 */
+  color: #666;
+}
+
+.prof_left a {
+  color: blue;
+  /* リンクの色を青に */
+  text-decoration: none;
+  /* 下線を消す */
+}
+
+.prof_left a:hover {
+  text-decoration: underline;
+  /* ホバー時に下線を表示 */
+}
+
 /* モーダルの基本スタイル */
 
 .modal {
